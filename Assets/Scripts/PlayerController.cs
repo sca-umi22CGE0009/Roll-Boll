@@ -5,69 +5,65 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 7; //“®‚­‘¬‚³
-    public float jumpPower;//ƒWƒƒƒ“ƒv
-    public Text scoreText;@//ƒXƒRƒA‚ÌUI
-    public Text winText;   //ƒŠƒUƒ‹ƒg‚ÌUI
+    public float speed; // å‹•ãé€Ÿã•
+    public Text scoreText; // ã‚¹ã‚³ã‚¢ã® UI
+    public Text winText; // ãƒªã‚¶ãƒ«ãƒˆã® UI
 
-    private Rigidbody rb;
-    private int score;      //ƒXƒRƒA
-    // Start is called before the first frame update
+    private Rigidbody rb; // Rididbody
+    private int score; // ã‚¹ã‚³ã‚¢
+
     void Start()
     {
+        // Rigidbody ã‚’å–å¾—
         rb = GetComponent<Rigidbody>();
 
-        //UI‚ğ‰Šú‰»
+        // UI ã‚’åˆæœŸåŒ–
         score = 0;
         SetCountText();
         winText.text = "";
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //ƒJ[ƒ\ƒ‹ƒL[‚Ì“ü—Í‚ğæ“¾
+        // ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã®å…¥åŠ›ã‚’å–å¾—
         var moveHorizontal = Input.GetAxis("Horizontal");
         var moveVertical = Input.GetAxis("Vertical");
 
-        //ˆÚ“®•ûŒü‚ğİ’è
+        // ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã®å…¥åŠ›ã«åˆã‚ã›ã¦ç§»å‹•æ–¹å‘ã‚’è¨­å®š
         var movement = new Vector3(moveHorizontal, 0, moveVertical);
 
+        // Ridigbody ã«åŠ›ã‚’ä¸ãˆã¦ç‰ã‚’å‹•ã‹ã™
         rb.AddForce(movement * speed);
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = Vector3.up * jumpPower;
-        }
     }
 
+    // ç‰ãŒä»–ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã¶ã¤ã‹ã£ãŸæ™‚ã«å‘¼ã³å‡ºã•ã‚Œã‚‹
     void OnTriggerEnter(Collider other)
     {
-        // ‚Ô‚Â‚©‚Á‚½ƒIƒuƒWƒFƒNƒg‚ªûWƒAƒCƒeƒ€‚¾‚Á‚½ê‡
-        if (other.gameObject.CompareTag("Pick Up"))
+        // ã¶ã¤ã‹ã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒåé›†ã‚¢ã‚¤ãƒ†ãƒ ã ã£ãŸå ´åˆ
+        if (other.gameObject.CompareTag("PickUp"))
         {
-            // ‚»‚ÌûWƒAƒCƒeƒ€‚ğ”ñ•\¦‚É‚µ‚Ü‚·
+            // ãã®åé›†ã‚¢ã‚¤ãƒ†ãƒ ã‚’éè¡¨ç¤ºã«ã—ã¾ã™
             other.gameObject.SetActive(false);
 
-            // ƒXƒRƒA‚ğ‰ÁZ‚µ‚Ü‚·
+            // ã‚¹ã‚³ã‚¢ã‚’åŠ ç®—ã—ã¾ã™
             score = score + 1;
 
-            // UI ‚Ì•\¦‚ğXV‚µ‚Ü‚·
-            SetCountText();
+            // UI ã®è¡¨ç¤ºã‚’æ›´æ–°ã—ã¾ã™
+            SetCountText ();
         }
     }
 
-    // UI ‚Ì•\¦‚ğXV‚·‚é
+    // UI ã®è¡¨ç¤ºã‚’æ›´æ–°ã™ã‚‹
     void SetCountText()
     {
-        // ƒXƒRƒA‚Ì•\¦‚ğXV
+        // ã‚¹ã‚³ã‚¢ã®è¡¨ç¤ºã‚’æ›´æ–°
         scoreText.text = "Count: " + score.ToString();
 
-        // ‚·‚×‚Ä‚ÌûWƒAƒCƒeƒ€‚ğŠl“¾‚µ‚½ê‡
-        if (score >= 12)
+        // ã™ã¹ã¦ã®åé›†ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç²å¾—ã—ãŸå ´åˆ
+        if (score >= 4)
         {
-            // ƒŠƒUƒ‹ƒg‚Ì•\¦‚ğXV
+            // ãƒªã‚¶ãƒ«ãƒˆã®è¡¨ç¤ºã‚’æ›´æ–°
             winText.text = "You Win!";
         }
-        }
+    }
 }
