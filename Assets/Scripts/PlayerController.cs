@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed; // 動く速さ
     public Text scoreText; // スコアの UI
     public Text winText; // リザルトの UI
+    public Text GameOver;
 
     private Rigidbody rb; // Rididbody
     private int score; // スコア
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
         score = 0;
         SetCountText();
         winText.text = "";
+
     }
 
     void Update()
@@ -51,6 +53,12 @@ public class PlayerController : MonoBehaviour
             // UI の表示を更新します
             SetCountText ();
         }
+        if (other.gameObject.CompareTag("BadPickUp"))
+        {
+            // その収集アイテムを非表示にします
+            other.gameObject.SetActive(false);
+
+        }
     }
 
     // UI の表示を更新する
@@ -65,5 +73,7 @@ public class PlayerController : MonoBehaviour
             // リザルトの表示を更新
             winText.text = "You Win!";
         }
+
+        GameOver.text = "GameOver";
     }
 }
