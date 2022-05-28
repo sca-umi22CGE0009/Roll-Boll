@@ -53,12 +53,7 @@ public class PlayerController : MonoBehaviour
             // UI の表示を更新します
             SetCountText ();
         }
-        if (other.gameObject.CompareTag("BadPickUp"))
-        {
-            // その収集アイテムを非表示にします
-            other.gameObject.SetActive(false);
 
-        }
     }
 
     // UI の表示を更新する
@@ -74,6 +69,5 @@ public class PlayerController : MonoBehaviour
             winText.text = "You Win!";
         }
 
-        GameOver.text = "GameOver";
     }
 }
