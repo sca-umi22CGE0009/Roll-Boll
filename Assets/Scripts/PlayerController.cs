@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
         // UI を初期化
         score = 0;
         SetCountText();
-        winText.text = "";
 
     }
 
@@ -53,6 +53,15 @@ public class PlayerController : MonoBehaviour
             // UI の表示を更新します
             SetCountText ();
         }
+        if(other.gameObject.CompareTag("BadPickUp"))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+         if(other.gameObject.CompareTag("GameOver"))
+         {
+             SceneManager.LoadScene("GameOver");
+         }
+
 
     }
 
@@ -66,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (score >= 6)
         {
             // リザルトの表示を更新
-            winText.text = "You Win!";
+             SceneManager.LoadScene("Clear");
         }
 
     }
