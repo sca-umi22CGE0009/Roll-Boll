@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         scoreText.text = "Count: " + score.ToString();
 
         // すべての収集アイテムを獲得した場合
-        if (score >= 6)
+        if (score >= 12)
         {
             // リザルトの表示を更新
              SceneManager.LoadScene("Clear");
