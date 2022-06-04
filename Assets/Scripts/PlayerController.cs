@@ -61,7 +61,10 @@ public class PlayerController : MonoBehaviour
          {
              SceneManager.LoadScene("GameOver");
          }
-
+        if (other.gameObject.CompareTag("Conceal"))
+        {
+            SceneManager.LoadScene("Perfect");
+        }
 
     }
 
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
         scoreText.text = "Count: " + score.ToString();
 
         // すべての収集アイテムを獲得した場合
-        if (score >= 12)
+        if (score >= 15)
         {
             // リザルトの表示を更新
              SceneManager.LoadScene("Clear");

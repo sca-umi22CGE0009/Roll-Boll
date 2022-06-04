@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Clear.unity
     guid: 7a9ade8e93bd61448921e8c7c2033f3b
+  - enabled: 0
+    path: Assets/Scenes/HiddenRoom.unity
+    guid: 457caed1677bba045988cc414ddf2601
+  - enabled: 1
+    path: Assets/Scenes/Perfect.unity
+    guid: e9e33857658b527498ff62442647ac40
   m_configObjects: {}
