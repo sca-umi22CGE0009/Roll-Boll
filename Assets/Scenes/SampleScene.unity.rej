@@ -1,9 +1,0 @@
-diff a/Assets/Scenes/SampleScene.unity b/Assets/Scenes/SampleScene.unity	(rejected hunks)
-@@ -2092,7 +2092,6 @@
-   - component: {fileID: 1117183893}
-   - component: {fileID: 1117183897}
-   - component: {fileID: 1117183899}
--  - component: {fileID: 1117183898}
-   - component: {fileID: 1117183900}
-   m_Layer: 0
-   m_Name: Player
