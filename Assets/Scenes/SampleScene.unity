@@ -2092,7 +2092,6 @@ GameObject:
   - component: {fileID: 1117183893}
   - component: {fileID: 1117183897}
   - component: {fileID: 1117183899}
-  - component: {fileID: 1117183898}
   - component: {fileID: 1117183900}
   m_Layer: 0
   m_Name: Player
@@ -2195,19 +2194,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &1117183898
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117183892}
-  m_Material: {fileID: 13400000, guid: 072691f4cd635414882649dce3c40a39, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1117183899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2220,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fb14243ba9d28428d32dbdc9466ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   scoreText: {fileID: 1994422330}
   winText: {fileID: 0}
   GameOver: {fileID: 0}
