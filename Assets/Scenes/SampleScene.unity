@@ -2092,6 +2092,7 @@ GameObject:
   - component: {fileID: 1117183893}
   - component: {fileID: 1117183897}
   - component: {fileID: 1117183899}
+  - component: {fileID: 1117183900}
   m_Layer: 0
   m_Name: Player
   m_TagString: PickUp
@@ -2205,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fb14243ba9d28428d32dbdc9466ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   scoreText: {fileID: 1994422330}
   winText: {fileID: 0}
   GameOver: {fileID: 0}
